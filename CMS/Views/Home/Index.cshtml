@@ -1,0 +1,156 @@
+﻿
+
+<!--Banner-->
+<div ng-app="frontApp">
+    @Html.Partial("_Banner")
+    <!--Main-->
+    <div class="main">
+        <!--CTA-->
+        <div class="container-fluid">
+            <div class="cta-main">
+                <div class="col-md-3">
+                    <div class="cta-child">
+                        <a href="/bai-viet/gioi-thieu-17" title="Giới thiệu"><img class="img-responsive" src="/Content/Images/images/CTA-KhongXoa/about%20us.jpg" title="Giới thiệu" alt="Giới thiệu" /></a>
+                        <div class="cta-text">
+                            <h4 class="cta-title"><a href="/bai-viet/gioi-thieu-17" title="Giới thiệu về chúng tôi">Giới thiệu</a></h4>
+                            <div class="cta-content">Chúng tôi mang đến những giải pháp bôi trơn tốt nhất dành cho xe của bạn. Chất lượng luôn là tiêu chí hàng đầu mà chúng tôi đặt ra.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="cta-child">
+                        <a href="/danh-muc-san-pham" title="Danh mục sản phẩm"><img class="img-responsive" title="Danh mục sản phẩm" alt="Danh mục sản phẩm" src="/Content/Images/images/CTA-KhongXoa/san%20pham.jpg" /></a>
+                        <div class="cta-text">
+                            <h4 class="cta-title"><a title="Danh mục sản phẩm" href="/danh-muc-san-pham">Sản phẩm</a></h4>
+                            <div class="cta-content">Tìm kiếm sản phẩm tốt nhất của Mobil, chúng tôi đảm bảo cung cấp sản phẩm chính hãng. Với nhiều loại dầu, độ nhớt, phẩm chất khác nhau ...</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="cta-child">
+                        <a href="/danh-muc-bai-viet/dai-ly-143" title="Đại lý"><img class="img-responsive" title="Đại lý" alt="Đại lý" src="/Content/Images/images/CTA-KhongXoa/dai%20ly.jpg" /></a>
+                        <div class="cta-text">
+                            <h4 class="cta-title"><a href="/danh-muc-bai-viet/dai-ly-143" title="Đại lý">Đại lý</a></h4>
+                            <div class="cta-content">Những đại lý cung cấp sản phẩm dầu nhớt Mobil tại Hải Phòng. Bạn có thể tìm được đại lý nào gần với mình nhất.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="cta-child">
+                        <a href="/danh-muc-bai-viet/cau-hoi-thuong-gap-138" title="Những câu hỏi thường gặp"><img class="img-responsive" src="/Content/Images/images/CTA-KhongXoa/faq.jpg" title="Những câu hỏi thường gặp" alt="Những câu hỏi thường gặp" /></a>
+                        <div class="cta-text">
+                            <h4 class="cta-title"><a href="/danh-muc-bai-viet/cau-hoi-thuong-gap-138" title="Những câu hỏi thường gặp">Câu hỏi thường gặp</a></h4>
+                            <div class="cta-content">Những câu hỏi thường được đặt ra bởi người dùng. Bạn có thể tham khảo thông tin chính xác mình cần từ những câu hỏi này.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Tabs-->
+        <div ng-controller="tabController">
+           <div class="container-fluid">
+               <div class="tabs-news">
+                   <!-- Nav tabs -->
+                   <ul class="nav nav-tabs responsive" role="tablist">
+                       <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" title="Kiến thức">Kiến thức</a></li>
+                       <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" title="Bảo dưỡng xe">Bảo dưỡng xe</a></li>
+                       <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab" title="Lái xe an toàn">Lái xe an toàn</a></li>
+                   </ul>
+                   <!-- Tab Products -->
+                   <div class="tab-content responsive">
+                       <div role="tabpanel" class="tab-pane active" id="home">
+                           <div class="content-container three">
+                               <div class="cta col-md-4" ng-repeat="(index, value) in kienthucs" ng-show="index < 3">
+                                   <div class="cta-media">
+                                       <a href="/bai-viet/{{value.alias}}-{{value.idPost}}" title="{{value.title}}">
+                                           <img src="{{value.image}}" title="{{value.title}}" alt="{{value.title}}" class="img-responsive" />
+                                       </a>
+                                   </div>
+                                   <div class="cta-text">
+                                       <header class="cta-header ">
+                                           <h4><a href="/bai-viet/{{value.alias}}-{{value.idPost}}" title="{{value.title}}">{{value.title}}</a></h4>
+                                       </header>
+                                       <div class="cta-body">
+                                           <p>{{value.description | limitTo: 100}}{{value.description.length > 100 ? '&hellip;' : ''}}</p>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="pull-right" style="margin: 10px; margin-right: 30px;"><a href="/danh-muc-bai-viet/kien-thuc-140">Xem thêm <span class="glyphicon glyphicon-chevron-right"></span></a></div>
+                       </div>
+                       <div role="tabpanel" class="tab-pane" id="profile">
+                           <div class="content-container three">
+                               <div class="cta col-md-4" ng-repeat="(index, value) in baoduongs" ng-show="index < 3">
+                                   <div class="cta-media">
+                                       <a href="/bai-viet/{{value.alias}}-{{value.idPost}}" title="{{value.title}}">
+                                           <img src="{{value.image}}" title="{{value.title}}" alt="{{value.title}}" class="img-responsive" />
+                                       </a>
+                                   </div>
+                                   <div class="cta-text">
+                                       <header class="cta-header ">
+                                           <h4><a href="/bai-viet/{{value.alias}}-{{value.idPost}}" title="{{value.title}}">{{value.title}}</a></h4>
+                                       </header>
+                                       <div class="cta-body">
+                                           <p>{{value.description | limitTo: 100}}{{value.description.length > 100 ? '&hellip;' : ''}}</p>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="pull-right" style="margin: 10px; margin-right: 30px;"><a href="/danh-muc-bai-viet/bao-duong-xe-141">Xem thêm <span class="glyphicon glyphicon-chevron-right"></span></a></div>
+                       </div>
+                       <div role="tabpanel" class="tab-pane" id="messages">
+                           <div class="content-container three">
+                               <div class="cta col-md-4" ng-repeat="(index, value) in laixeantoans" ng-show="index < 3">
+                                   <div class="cta-media">
+                                       <a href="/bai-viet/{{value.alias}}-{{value.idPost}}" title="{{value.title}}">
+                                           <img src="{{value.image}}" title="{{value.title}}" alt="{{value.title}}" class="img-responsive" />
+                                       </a>
+                                   </div>
+                                   <div class="cta-text">
+                                       <header class="cta-header ">
+                                           <h4><a href="/bai-viet/{{value.alias}}-{{value.idPost}}" title="{{value.title}}">{{value.title}}</a></h4>
+                                       </header>
+                                       <div class="cta-body">
+                                           <p>{{value.description | limitTo: 100}}{{value.description.length > 100 ? '&hellip;' : ''}}</p>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="pull-right" style="margin: 10px; margin-right: 30px;"><a href="/danh-muc-bai-viet/lai-xe-an-toan-142">Xem thêm <span class="glyphicon glyphicon-chevron-right"></span></a></div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+        </div>
+        <!--Videos-->
+        <div ng-controller="videoController">
+            <div class="container-fluid">
+                <div class="video">
+                    <div class="container-fluid">
+                        <div class="video-select">
+                            <div class="col-md-2"><span class="pull-right">Xem video:</span></div>
+                            <div class="col-md-5">
+                                <select class="form-control" ng-model="video"
+                                        ng-options="video.title for video in videos track by video.id">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="col-md-6">
+                        <div class="video-play embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="{{video.link_video}}" frameborder="0" allowfullscreen ></iframe>
+                            <noframes>Xin lỗi, trình duyệt của bạn không hỗ trợ frames.</noframes>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="video-detail">
+                            <p>{{video.description}}</p>
+                            <a href="{{video.link_post}}" class="btn btn-danger" ng-show="video.link_post">Xem bài viết</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

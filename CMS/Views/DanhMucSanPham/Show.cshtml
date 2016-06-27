@@ -1,0 +1,59 @@
+﻿@model CMS.Models.CategoryProduct
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div ng-app="frontApp">
+    <div class="banner">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+                <div class="item banner-child active" style="background-image: url(@Model.image_banner); background-color: @Model.color_background_banner; ">
+                    <div class="banner-child-content">
+                        <div class="banner-child-title" style="color: @Model.color_text_banner">
+                            @Model.title
+                        </div>
+                        <div class="banner-child-des" style="color: @Model.color_title_banner">
+                            @Model.description
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-controller="childCategoryProductController">
+        <input type="hidden" value="@Model.idCategory" id="idCategory" />
+        <div class="container-fluid" ng-show="categories.length > 0">
+            <div class="catalog-product">
+                <h3 class="title-catalog">DANH MỤC</h3>
+                @*<div class="col-md-3" ng-repeat="(index, value) in categories">*@
+                <div class="col-md-3" dir-paginate="(index, value) in categories | itemsPerPage: 12">
+                    <div class="catalog-child">
+                        <a href="/danh-muc-san-pham/{{value.alias}}-{{value.idCategory}}" title="{{value.title}}"><img title="{{value.title}}" alt="{{value.title}}" src="{{value.image}}" class="img-responsive" /></a>
+                        <div class="text">
+                            <div class="title"><a href="/danh-muc-san-pham/{{value.alias}}-{{value.idCategory}}" title="{{value.title}}">{{value.title}}</a></div>
+                            <div class="description">{{value.description | limitTo: 100}}{{value.description.length > 100 ? '&hellip;' : ''}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container"><dir-pagination-controls></dir-pagination-controls></div>
+        </div>
+        <div class="container-fluid" ng-show="products.length > 0">
+            <div class="catalog-product">
+                <h3 class="title-catalog">SẢN PHẨM</h3>
+                @*<div class="col-md-3" ng-repeat="(index, value) in products">*@
+                <div class="col-md-3" dir-paginate="(index, value) in products | itemsPerPage: 12">
+                    <div class="catalog-child">
+                        <a href="/san-pham/{{value.alias}}-{{value.idProduct}}" title="{{value.title}}"><img title="{{value.title}}" alt="{{value.title}}" src="{{value.image}}" class="img-responsive" /></a>
+                        <div class="text">
+                            <div class="title"><a href="/san-pham/{{value.alias}}-{{value.idProduct}}" title="{{value.title}}">{{value.title}}</a></div>
+                            <div class="description">{{value.note | limitTo: 100}}{{value.note.length > 100 ? '&hellip;' : ''}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container"><dir-pagination-controls></dir-pagination-controls></div>
+        </div>
+    </div>
+</div>

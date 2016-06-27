@@ -1,0 +1,77 @@
+﻿@model CMS.Models.Post
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div ng-app="frontApp">
+    @*@Html.Partial("_Banner")*@
+
+    <div>
+        <div class="container-fluid">
+            <div class="row">
+                <div ng-controller="showPostController">
+                    <!--SEO-->
+
+                    <input type="hidden" value="@Model.idPost" id="idPost" />
+                    <div class="category-menu-1">
+                        <div class="col-md-3">
+                            @Html.Partial("_MenuCategoryPost")
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="post" >
+                            <h1 class="title-post" style="margin-bottom: 10px;">{{post.title}}</h1>
+                            <div class="byline" style="margin-bottom: 30px;">
+                                <div class="article-sharing">
+                                    <a name="fb_share" type="button" href="http://www.facebook.com/sharer.php">Chia sẻ</a>
+                                    <div class="fb-share-button fb_iframe_widget" style="margin-left: 10px;">
+                                        <span class="btn-warning" data-toggle="modal" data-target="#dangkyNhanTin" style="vertical-align: bottom; height: 20px; padding: 2px 5px; font-size: 0.85em; border-radius: 3px; cursor: pointer"><span class="glyphicon glyphicon-envelope"></span> Đăng ký nhận tin</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-post" ng-bind-html="post.content" ></div>
+                        </div>
+                        <div class="relate-post">
+                            <p class="title-relate-post">Bài viết liên quan</p>
+                            <div class="col-md-4" ng-repeat="(index, value) in relatedPosts" style="" ng-show="index < 3">
+                                <div class="child-post">
+                                    <a href="/bai-viet/{{value.alias}}-{{value.idPost}}"><img src="{{value.image}}" class="img-responsive" /></a>
+                                    <div class="text">
+                                        <a href="/bai-viet/{{value.alias}}-{{value.idPost}}">{{value.title}}</a> <br />
+                                        <div class="description">{{value.description | limitTo: 100}}{{value.description.length > 100 ? '&hellip;' : ''}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category-menu-2">
+                        <div class="col-md-3">
+                            @Html.Partial("_MenuCategoryPost")
+                        </div>
+                    </div>
+                    <!--Đăng ký nhận tin-->
+                    <div class="modal fade" tabindex="-1" role="dialog" ng-controller="cusRegisterController" id="dangkyNhanTin">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title">Đăng ký nhận tin</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <input class="form-control" type="email" name="email" ng-keypress="($event.which === 13)?registe():0" ng-model="cusRegiste.email" id="email" placeholder="Email..." required>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                                    <button type="button" class="btn btn-primary" ng-click="registe()" data-dismiss="modal" ng-show="cusRegiste.email">Đăng ký</button>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

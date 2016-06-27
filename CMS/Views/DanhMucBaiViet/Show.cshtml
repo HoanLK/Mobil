@@ -1,0 +1,79 @@
+﻿@model CMS.Models.Category
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div ng-app="frontApp">
+    <div class="banner">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+                <div class="item banner-child active" style="background-image: url(@Model.image_banner); background-color: @Model.color_background_banner; ">
+                    <div class="banner-child-content">
+                        <div class="banner-child-title" style="color: @Model.color_title_banner">
+                            @Model.title
+                        </div>
+                        <div class="banner-child-des" style="color: @Model.color_text_banner">
+                            @Model.description
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="category-menu-1">
+                    <div class="col-md-3">
+                        @Html.Partial("_MenuCategoryPost")
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div ng-controller="childCategoryPostController">
+                        <input type="hidden" value="@Model.idCategory" id="idCategory" />
+                        <div class="list-category-post" ng-show="categories.length > 0">
+                            <h6 ng-show="!(categories.length > 0) && !(posts.length > 0)"><i>Xin lỗi! Chưa có bài viết cho danh mục này.</i></h6>
+                            <h1 class="title" >Danh mục bài viết </h1>
+                            <div class="container-fluid">
+                                @*<div class="col-md-6" ng-repeat="(index, value) in categories">*@
+                                <div class="col-md-6" dir-paginate="(index, value) in categories | itemsPerPage:12">
+                                    <div class="child-post">
+                                        <a href="/danh-muc-bai-viet/{{value.alias}}-{{value.id}}" class="title-child-post"><img src="{{value.image}}" class="img-responsive" /></a>
+                                        <div class="text">
+                                            <a href="/danh-muc-bai-viet/{{value.alias}}-{{value.id}}">{{value.title}}</a> <br />
+                                            <div class="description">{{value.description | limitTo: 100}}{{value.description.length > 100 ? '&hellip;' : ''}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container"><dir-pagination-controls></dir-pagination-controls></div>
+                            </div>
+                        </div>
+                        <div class="list-category-post" ng-show="posts.length > 0">
+                            <h1 class="title" >Bài viết </h1>
+                            <div class="container-fluid">
+                                @*<div class="col-md-6" ng-repeat="(index, value) in posts">*@
+                                <div class="col-md-6" dir-paginate="(index, value) in posts | itemsPerPage: 12">
+                                    <div class="child-post">
+                                        <a href="/bai-viet/{{value.alias}}-{{value.idPost}}" class="title-child-post"><img src="{{value.image}}" class="img-responsive" /></a>
+                                        <div class="text">
+                                            <a href="/bai-viet/{{value.alias}}-{{value.idPost}}">{{value.title}}</a> <br />
+                                            <div class="description">{{value.description | limitTo: 100}}{{value.description.length > 100 ? '&hellip;' : ''}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container"><dir-pagination-controls></dir-pagination-controls></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-menu-2">
+                    <div class="col-md-3">
+                        @Html.Partial("_MenuCategoryPost")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,617 @@
+﻿@model CMS.Models.Product
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div ng-app="frontApp">
+    <div ng-controller="showProductController">
+        <input type="hidden" value="@Model.idProduct" id="idCategory" />
+        <div class="container-fluid">
+            <div class="col-md-9 prod">
+                <div class="container-fluid">
+                    <div class="common">
+                        <div class="col-md-4">
+                            <img class="image-prod img-responsive" src="{{product.image}}" title="{{value.title}}" alt="{{value.title}}" />
+                        </div>
+                        <div class="col-md-8">
+                            <h1 class="title-prod">{{product.title}}</h1>
+                            <a href="/danh-muc-bai-viet/dai-ly-143/" class="btn btn-lg btn-primary" title="Mua dầu ở đâu">Mua dầu ở đâu</a>
+                            <div class="description-prod" ng-bind-html="product.content"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="feature">
+                        <h3 class="title-feature">Tính năng sản phẩm</h3>
+                        <div class="content-feature" ng-bind-html="product.description"></div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="grade">
+                        <h3 class="title-grade">Thông số phẩm cấp</h3>
+                        <div class="tabs-news row content-grade">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs responsive" role="tablist">
+                                @if (!(Model.gra0w20_specification == null))
+                                {
+                                    <li role="presentation" ng-show="product.gra0w20_specification || product.gra0w20_technical" ng-class="{'active': product.gra0w20_technical}" class="active"><a href="#0w20" aria-controls="home" role="tab" data-toggle="tab">0W-20</a></li>}
+                                @if (!(Model.gra0w30_specification == null))
+                                {
+                                    <li role="presentation" ng-show="product.gra0w30_specification || product.gra0w30_technical" ng-class="{'active': !product.gra0w20_technical && product.gra0w30_technical}"><a href="#0w30" aria-controls="profile" role="tab" data-toggle="tab">0W-30</a></li>}
+                                @if (!(Model.gra0w40_specification == null))
+                                {
+                                    <li role="presentation" ng-show="product.gra0w40_specification || product.gra0w40_technical" ng-class="{'active': !product.gra0w20_technical && !product.gra0w30_technical && product.gra0w40_technical}"><a href="#0w40" aria-controls="profile" role="tab" data-toggle="tab">0W-40</a></li>
+                                }
+                                @if (!(Model.gra0w50_specification == null))
+                                {
+                                    <li role="presentation" ng-show="product.gra0w50_specification || product.gra0w50_technical" ng-class="{'active': !product.gra0w20_technical && !product.gra0w30_technical && !product.gra0w40_technical && product.gra0w50_technical}"><a href="#0w50" aria-controls="profile" role="tab" data-toggle="tab">0W-50</a></li>}
+                                @if (!(Model.gra5w20_specification == null))
+                                {
+                                    <li role="presentation" ng-show="product.gra5w20_specification || product.gra5w20_technical" ng-class="{'active': !product.gra0w20_technical && !product.gra0w30_technical && !product.gra0w40_technical && !product.gra0w50_technical && product.gra5w20_technical}"><a href="#5w20" aria-controls="profile" role="tab" data-toggle="tab">5W-20</a></li>}
+                                @if (!(Model.gra5w30_specification == null))
+                                {
+                                    <li role="presentation" ng-show="product.gra5w30_specification || product.gra5w30_technical" ng-class="{'active': !product.gra0w20_technical && !product.gra0w30_technical && !product.gra0w40_technical && !product.gra0w50_technical && !product.gra5w20_technical && product.gra5w30_technical}"><a href="#5w30" aria-controls="profile" role="tab" data-toggle="tab">5W-30</a></li>}
+                                @if (!(Model.gra5w40_specification == null))
+                                {
+                                    <li role="presentation" ng-show="product.gra5w40_specification || product.gra5w40_technical" ng-class="{'active':   !product.gra0w20_technical && 
+                                                                                                                                                        !product.gra0w30_technical && 
+                                                                                                                                                        !product.gra0w40_technical && 
+                                                                                                                                                        !product.gra0w50_technical && 
+                                                                                                                                                        !product.gra5w20_technical && 
+                                                                                                                                                        !product.gra5w30_technical &&
+                                                                                                                                                        product.gra5w40_technical}"><a href="#5w40" aria-controls="profile" role="tab" data-toggle="tab">5W-40</a></li>}
+                                @if (!(Model.gra5w50_specification == null))
+                                {
+                                    <li role="presentation" ng-show="product.gra5w50_specification || product.gra5w50_technical" ng-class="{'active':   !product.gra0w20_technical && 
+                                                                                                                                                        !product.gra0w30_technical && 
+                                                                                                                                                        !product.gra0w40_technical && 
+                                                                                                                                                        !product.gra0w50_technical && 
+                                                                                                                                                        !product.gra5w20_technical && 
+                                                                                                                                                        !product.gra5w30_technical && 
+                                                                                                                                                        !product.gra5w40_technical &&
+                                                                                                                                                        product.gra5w50_technical}"><a href="#5w50" aria-controls="profile" role="tab" data-toggle="tab">5W-50</a></li>}
+
+                                @if (!(Model.gra10w30_specification == null))
+                                {
+                                    <li role="presentation" ng-show="product.gra10w30_specification || product.gra10w30_technical" ng-class="{'active': !product.gra0w20_technical && 
+                                                                                                                                                        !product.gra0w30_technical && 
+                                                                                                                                                        !product.gra0w40_technical && 
+                                                                                                                                                        !product.gra0w50_technical && 
+                                                                                                                                                        !product.gra5w20_technical && 
+                                                                                                                                                        !product.gra5w30_technical && 
+                                                                                                                                                        !product.gra5w40_technical &&
+                                                                                                                                                        !product.gra5w50_technical && 
+                                                                                                                                                        product.gra10w30_technical}"><a href="#10w30" aria-controls="profile" role="tab" data-toggle="tab">10-W30</a></li>}
+                                @if (!(Model.gra10w40_specification == null))
+                                {
+                                    <li role="presentation" ng-show="product.gra10w40_specification || product.gra10w40_technical" ng-class="{'active': !product.gra0w20_technical && 
+                                                                                                                                                        !product.gra0w30_technical && 
+                                                                                                                                                        !product.gra0w40_technical && 
+                                                                                                                                                        !product.gra0w50_technical && 
+                                                                                                                                                        !product.gra5w20_technical && 
+                                                                                                                                                        !product.gra5w30_technical && 
+                                                                                                                                                        !product.gra5w40_technical &&
+                                                                                                                                                        !product.gra5w50_technical && 
+                                                                                                                                                        !product.gra10w30_technical &&
+                                                                                                                                                        product.gra10w40_technical}"><a href="#10w40" aria-controls="profile" role="tab" data-toggle="tab">10-W40</a></li>}
+
+                                @if (!(Model.gra15w40_specification == null))
+                                {
+                                    <li role="presentation" ng-show="product.gra15w40_specification || product.gra15w40_technical" ng-class="{'active': !product.gra0w20_technical && 
+                                                                                                                                                        !product.gra0w30_technical && 
+                                                                                                                                                        !product.gra0w40_technical && 
+                                                                                                                                                        !product.gra0w50_technical && 
+                                                                                                                                                        !product.gra5w20_technical && 
+                                                                                                                                                        !product.gra5w30_technical && 
+                                                                                                                                                        !product.gra5w40_technical &&
+                                                                                                                                                        !product.gra5w50_technical && 
+                                                                                                                                                        !product.gra10w30_technical &&
+                                                                                                                                                        !product.gra10w40_technical &&
+                                                                                                                                                        product.gra15w40_technical}"><a href="#15w40" aria-controls="profile" role="tab" data-toggle="tab">15W-40</a></li>}
+                                @if (!(Model.gra15w50_specification == null))
+                                {
+                                    <li role="presentation" ng-show="product.gra15w50_specification || product.gra15w50_technical" ng-class="{'active': !product.gra0w20_technical && 
+                                                                                                                                                        !product.gra0w30_technical && 
+                                                                                                                                                        !product.gra0w40_technical && 
+                                                                                                                                                        !product.gra0w50_technical && 
+                                                                                                                                                        !product.gra5w20_technical && 
+                                                                                                                                                        !product.gra5w30_technical && 
+                                                                                                                                                        !product.gra5w40_technical &&
+                                                                                                                                                        !product.gra5w50_technical && 
+                                                                                                                                                        !product.gra10w30_technical &&
+                                                                                                                                                        !product.gra10w40_technical &&
+                                                                                                                                                        !product.gra15w40_technical &&
+                                                                                                                                                        product.gra15w50_technical}"><a href="#15w50" aria-controls="profile" role="tab" data-toggle="tab">15W-50</a></li>}
+
+                                @if (!(Model.gra20w50_specification == null))
+                                {
+                                    <li role="presentation" ng-show="product.gra20w50_specification || product.gra20w50_technical" ng-class="{'active': !product.gra0w20_technical && 
+                                                                                                                                                        !product.gra0w30_technical && 
+                                                                                                                                                        !product.gra0w40_technical && 
+                                                                                                                                                        !product.gra0w50_technical && 
+                                                                                                                                                        !product.gra5w20_technical && 
+                                                                                                                                                        !product.gra5w30_technical && 
+                                                                                                                                                        !product.gra5w40_technical &&
+                                                                                                                                                        !product.gra5w50_technical && 
+                                                                                                                                                        !product.gra10w30_technical &&
+                                                                                                                                                        !product.gra10w40_technical &&
+                                                                                                                                                        !product.gra15w40_technical &&
+                                                                                                                                                        !product.gra15w50_technical &&
+                                                                                                                                                        product.gra20w50_technical}"><a href="#20w50" aria-controls="profile" role="tab" data-toggle="tab">20W-50</a></li>}
+
+                                @if (!(Model.gra75w90_specification == null))
+                                {
+                                    <li role="presentation" ng-show="product.gra75w90_specification || product.gra75w90_technical" ng-class="{'active': !product.gra0w20_technical && 
+                                                                                                                                                        !product.gra0w30_technical && 
+                                                                                                                                                        !product.gra0w40_technical && 
+                                                                                                                                                        !product.gra0w50_technical && 
+                                                                                                                                                        !product.gra5w20_technical && 
+                                                                                                                                                        !product.gra5w30_technical && 
+                                                                                                                                                        !product.gra5w40_technical &&
+                                                                                                                                                        !product.gra5w50_technical && 
+                                                                                                                                                        !product.gra10w30_technical &&
+                                                                                                                                                        !product.gra10w40_technical &&
+                                                                                                                                                        !product.gra15w40_technical &&
+                                                                                                                                                        !product.gra15w50_technical &&
+                                                                                                                                                        !product.gra20w50_technical &&
+                                                                                                                                                        product.gra75w90_technical}"><a href="#75w90" aria-controls="profile" role="tab" data-toggle="tab">75W-90</a></li>}
+                                @if (!(Model.gra75w140_specification == null))
+                                {
+                                    <li role="presentation" ng-show="product.gra75w140_specification || product.gra75w140_technical" ng-class="{'active': !product.gra0w20_technical && 
+                                                                                                                                                        !product.gra0w30_technical && 
+                                                                                                                                                        !product.gra0w40_technical && 
+                                                                                                                                                        !product.gra0w50_technical && 
+                                                                                                                                                        !product.gra5w20_technical && 
+                                                                                                                                                        !product.gra5w30_technical && 
+                                                                                                                                                        !product.gra5w40_technical &&
+                                                                                                                                                        !product.gra5w50_technical && 
+                                                                                                                                                        !product.gra10w30_technical &&
+                                                                                                                                                        !product.gra10w40_technical &&
+                                                                                                                                                        !product.gra15w40_technical &&
+                                                                                                                                                        !product.gra15w50_technical &&
+                                                                                                                                                        !product.gra20w50_technical &&
+                                                                                                                                                        !product.gra75w90_technical &&
+                                                                                                                                                        product.gra75w140_technical}"><a href="#75w140" aria-controls="profile" role="tab" data-toggle="tab">75W-140</a></li>}
+
+                                @if (!(Model.gra80w90_specification == null))
+                                {
+                                    <li role="presentation" ng-show="product.gra80w90_specification || product.gra80w90_technical" ng-class="{'active': !product.gra0w20_technical && 
+                                                                                                                                                        !product.gra0w30_technical && 
+                                                                                                                                                        !product.gra0w40_technical && 
+                                                                                                                                                        !product.gra0w50_technical && 
+                                                                                                                                                        !product.gra5w20_technical && 
+                                                                                                                                                        !product.gra5w30_technical && 
+                                                                                                                                                        !product.gra5w40_technical &&
+                                                                                                                                                        !product.gra5w50_technical && 
+                                                                                                                                                        !product.gra10w30_technical &&
+                                                                                                                                                        !product.gra10w40_technical &&
+                                                                                                                                                        !product.gra15w40_technical &&
+                                                                                                                                                        !product.gra15w50_technical &&
+                                                                                                                                                        !product.gra20w50_technical &&
+                                                                                                                                                        !product.gra75w90_technical &&
+                                                                                                                                                        !product.gra75w140_technical &&
+                                                                                                                                                        product.gra80w90_technical}"><a href="#80w90" aria-controls="profile" role="tab" data-toggle="tab">80W-90</a></li>}
+                                @if (!(Model.gra85w140_specification == null))
+                                {
+                                    <li role="presentation" ng-show="product.gra85w140_specification || product.gra85w140_technical" ng-class="{'active': !product.gra0w20_technical && 
+                                                                                                                                                        !product.gra0w30_technical && 
+                                                                                                                                                        !product.gra0w40_technical && 
+                                                                                                                                                        !product.gra0w50_technical && 
+                                                                                                                                                        !product.gra5w20_technical && 
+                                                                                                                                                        !product.gra5w30_technical && 
+                                                                                                                                                        !product.gra5w40_technical &&
+                                                                                                                                                        !product.gra5w50_technical && 
+                                                                                                                                                        !product.gra10w30_technical &&
+                                                                                                                                                        !product.gra10w40_technical &&
+                                                                                                                                                        !product.gra15w40_technical &&
+                                                                                                                                                        !product.gra15w50_technical &&
+                                                                                                                                                        !product.gra20w50_technical &&
+                                                                                                                                                        !product.gra75w90_technical &&
+                                                                                                                                                        !product.gra75w140_technical &&
+                                                                                                                                                        !product.gra80w90_technical &&
+                                                                                                                                                        product.gra85w140_technical}"><a href="#85w140" aria-controls="profile" role="tab" data-toggle="tab">85W-140</a></li>}
+
+
+                            </ul>
+                            <!-- Tab Products -->
+                            <div class="tab-content responsive">
+                                <!--0w20-->
+                                <div role="tabpanel" class="tab-pane" ng-class="{'active': product.gra0w20_technical}" id="0w20">
+                                    <div class="content-container">
+                                        <div class="cta col-md-6">
+                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <section><section ng-bind-html="product.gra0w20_specification"></section></section>
+                                        </div>
+                                        <div class="cta col-md-6">
+                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <section style="margin-top: 10px;">
+                                                <section ng-bind-html="product.gra0w20_technical"></section>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--0w30-->
+                                <div role="tabpanel" class="tab-pane" ng-class="{'active': !product.gra0w20_technical && product.gra0w30_technical}" id="0w30">
+                                    <div class="content-container">
+                                        <div class="cta col-md-6">
+                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <section><section ng-bind-html="product.gra0w30_specification"></section></section>
+                                        </div>
+                                        <div class="cta col-md-6">
+                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <section style="margin-top: 10px;">
+                                                <section ng-bind-html="product.gra0w30_technical"></section>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--0w40-->
+                                <div role="tabpanel" class="tab-pane" ng-class="{'active': !product.gra0w20_technical && !product.gra0w30_technical && product.gra0w40_technical}" id="0w40">
+                                    <div class="content-container">
+                                        <div class="cta col-md-6">
+                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <section><section ng-bind-html="product.gra0w40_specification"></section></section>
+                                        </div>
+                                        <div class="cta col-md-6">
+                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <section style="margin-top: 10px;">
+                                                <section ng-bind-html="product.gra0w40_technical"></section>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--0w50-->
+                                <div role="tabpanel" class="tab-pane" ng-class="{'active': !product.gra0w20_technical && !product.gra0w30_technical && !product.gra0w40_technical && product.gra0w50_technical}" id="0w50">
+                                    <div class="content-container">
+                                        <div class="cta col-md-6">
+                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <section><section ng-bind-html="product.gra0w50_specification"></section></section>
+                                        </div>
+                                        <div class="cta col-md-6">
+                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <section style="margin-top: 10px;">
+                                                <section ng-bind-html="product.gra0w50_technical"></section>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--5w20-->
+                                <div role="tabpanel" class="tab-pane" ng-class="{'active': !product.gra0w20_technical && !product.gra0w30_technical && !product.gra0w40_technical && !product.gra0w50_technical && product.gra5w20_technical}" id="5w20">
+                                    <div class="content-container">
+                                        <div class="cta col-md-6">
+                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <section ng-bind-html="product.gra5w20_specification"></section>
+                                        </div>
+                                        <div class="cta col-md-6">
+                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <section>
+                                                <section ng-bind-html="product.gra5w20_technical"></section>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--5w30-->
+                                <div role="tabpanel" class="tab-pane" ng-class="{'active': !product.gra0w20_technical && !product.gra0w30_technical && !product.gra0w40_technical && !product.gra0w50_technical && !product.gra5w20_technical && product.gra5w30_technical}" id="5w30">
+                                    <div class="content-container">
+                                        <div class="cta col-md-6">
+                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <section ng-bind-html="product.gra5w30_specification"></section>
+                                        </div>
+                                        <div class="cta col-md-6">
+                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <section>
+                                                <section ng-bind-html="product.gra5w30_technical"></section>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--5w40-->
+                                <div role="tabpanel" class="tab-pane" ng-class="{'active':  !product.gra0w20_technical && 
+                                                                                            !product.gra0w30_technical && 
+                                                                                            !product.gra0w40_technical && 
+                                                                                            !product.gra0w50_technical && 
+                                                                                            !product.gra5w20_technical && 
+                                                                                            !product.gra5w30_technical &&
+                                                                                            product.gra5w40_technical}" id="5w40">
+                                    <div class="content-container">
+                                        <div class="cta col-md-6">
+                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <section ng-bind-html="product.gra5w40_specification"></section>
+                                        </div>
+                                        <div class="cta col-md-6">
+                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <section>
+                                                <section ng-bind-html="product.gra5w40_technical"></section>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--5w50-->
+                                <div role="tabpanel" class="tab-pane" ng-class="{'active':  !product.gra0w20_technical && 
+                                                                                            !product.gra0w30_technical && 
+                                                                                            !product.gra0w40_technical && 
+                                                                                            !product.gra0w50_technical && 
+                                                                                            !product.gra5w20_technical && 
+                                                                                            !product.gra5w30_technical && 
+                                                                                            !product.gra5w40_technical &&
+                                                                                            product.gra5w50_technical}" id="5w50">
+                                    <div class="content-container">
+                                        <div class="cta col-md-6">
+                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <section ng-bind-html="product.gra5w50_specification"></section>
+                                        </div>
+                                        <div class="cta col-md-6">
+                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <section>
+                                                <section ng-bind-html="product.gra5w50_technical"></section>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--10w30-->
+                                <div role="tabpanel" class="tab-pane" ng-class="{'active': !product.gra0w20_technical && 
+                                                                                            !product.gra0w30_technical && 
+                                                                                            !product.gra0w40_technical && 
+                                                                                            !product.gra0w50_technical && 
+                                                                                            !product.gra5w20_technical && 
+                                                                                            !product.gra5w30_technical && 
+                                                                                            !product.gra5w40_technical &&
+                                                                                            !product.gra5w50_technical && 
+                                                                                            product.gra10w30_technical}" id="10w30">
+                                    <div class="content-container">
+                                        <div class="cta col-md-6">
+                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <section ng-bind-html="product.gra10w30_specification"></section>
+                                        </div>
+                                        <div class="cta col-md-6">
+                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <section>
+                                                <section ng-bind-html="product.gra10w30_technical"></section>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--10w40-->
+                                <div role="tabpanel" class="tab-pane" ng-class="{'active': !product.gra0w20_technical && 
+                                                                                            !product.gra0w30_technical && 
+                                                                                            !product.gra0w40_technical && 
+                                                                                            !product.gra0w50_technical && 
+                                                                                            !product.gra5w20_technical && 
+                                                                                            !product.gra5w30_technical && 
+                                                                                            !product.gra5w40_technical &&
+                                                                                            !product.gra5w50_technical && 
+                                                                                            !product.gra10w30_technical &&
+                                                                                            product.gra10w40_technical}" id="10w40">
+                                    <div class="content-container">
+                                        <div class="cta col-md-6">
+                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <section ng-bind-html="product.gra10w40_specification"></section>
+                                        </div>
+                                        <div class="cta col-md-6">
+                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <section>
+                                                <section ng-bind-html="product.gra10w40_technical"></section>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--15w40-->
+                                <div role="tabpanel" class="tab-pane" ng-class="{'active': !product.gra0w20_technical && 
+                                                                                            !product.gra0w30_technical && 
+                                                                                            !product.gra0w40_technical && 
+                                                                                            !product.gra0w50_technical && 
+                                                                                            !product.gra5w20_technical && 
+                                                                                            !product.gra5w30_technical && 
+                                                                                            !product.gra5w40_technical &&
+                                                                                            !product.gra5w50_technical && 
+                                                                                            !product.gra10w30_technical &&
+                                                                                            !product.gra10w40_technical &&
+                                                                                            product.gra15w40_technical}" id="15w40">
+                                    <div class="content-container">
+                                        <div class="cta col-md-6">
+                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <section ng-bind-html="product.gra15w40_specification"></section>
+                                        </div>
+                                        <div class="cta col-md-6">
+                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <section>
+                                                <section ng-bind-html="product.gra15w40_technical"></section>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--15w50-->
+                                <div role="tabpanel" class="tab-pane" ng-class="{'active': !product.gra0w20_technical && 
+                                                                                            !product.gra0w30_technical && 
+                                                                                            !product.gra0w40_technical && 
+                                                                                            !product.gra0w50_technical && 
+                                                                                            !product.gra5w20_technical && 
+                                                                                            !product.gra5w30_technical && 
+                                                                                            !product.gra5w40_technical &&
+                                                                                            !product.gra5w50_technical && 
+                                                                                            !product.gra10w30_technical &&
+                                                                                            !product.gra10w40_technical &&
+                                                                                            !product.gra15w40_technical &&
+                                                                                            product.gra15w50_technical}" id="15w50">
+                                    <div class="content-container">
+                                        <div class="cta col-md-6">
+                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <section ng-bind-html="product.gra15w50_specification"></section>
+                                        </div>
+                                        <div class="cta col-md-6">
+                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <section>
+                                                <section ng-bind-html="product.gra15w50_technical"></section>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--20w50-->
+                                <div role="tabpanel" class="tab-pane" ng-class="{'active': !product.gra0w20_technical && 
+                                                                                            !product.gra0w30_technical && 
+                                                                                            !product.gra0w40_technical && 
+                                                                                            !product.gra0w50_technical && 
+                                                                                            !product.gra5w20_technical && 
+                                                                                            !product.gra5w30_technical && 
+                                                                                            !product.gra5w40_technical &&
+                                                                                            !product.gra5w50_technical && 
+                                                                                            !product.gra10w30_technical &&
+                                                                                            !product.gra10w40_technical &&
+                                                                                            !product.gra15w40_technical &&
+                                                                                            !product.gra15w50_technical &&
+                                                                                            product.gra20w50_technical}" id="20w50">
+                                    <div class="content-container">
+                                        <div class="cta col-md-6">
+                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <section ng-bind-html="product.gra20w50_specification"></section>
+                                        </div>
+                                        <div class="cta col-md-6">
+                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <section>
+                                                <section ng-bind-html="product.gra20w50_technical"></section>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--75w90-->
+                                <div role="tabpanel" class="tab-pane" ng-class="{'active': !product.gra0w20_technical && 
+                                                                                            !product.gra0w30_technical && 
+                                                                                            !product.gra0w40_technical && 
+                                                                                            !product.gra0w50_technical && 
+                                                                                            !product.gra5w20_technical && 
+                                                                                            !product.gra5w30_technical && 
+                                                                                            !product.gra5w40_technical &&
+                                                                                            !product.gra5w50_technical && 
+                                                                                            !product.gra10w30_technical &&
+                                                                                            !product.gra10w40_technical &&
+                                                                                            !product.gra15w40_technical &&
+                                                                                            !product.gra15w50_technical &&
+                                                                                            !product.gra20w50_technical &&
+                                                                                            product.gra75w90_technical}" id="75w90">
+                                    <div class="content-container">
+                                        <div class="cta col-md-6">
+                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <section ng-bind-html="product.gra75w90_specification"></section>
+                                        </div>
+                                        <div class="cta col-md-6">
+                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <section>
+                                                <section ng-bind-html="product.gra75w90_technical"></section>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--75w140-->
+                                <div role="tabpanel" class="tab-pane" ng-class="{'active': !product.gra0w20_technical && 
+                                                                                            !product.gra0w30_technical && 
+                                                                                            !product.gra0w40_technical && 
+                                                                                            !product.gra0w50_technical && 
+                                                                                            !product.gra5w20_technical && 
+                                                                                            !product.gra5w30_technical && 
+                                                                                            !product.gra5w40_technical &&
+                                                                                            !product.gra5w50_technical && 
+                                                                                            !product.gra10w30_technical &&
+                                                                                            !product.gra10w40_technical &&
+                                                                                            !product.gra15w40_technical &&
+                                                                                            !product.gra15w50_technical &&
+                                                                                            !product.gra20w50_technical &&
+                                                                                            !product.gra75w90_technical &&
+                                                                                            product.gra75w140_technical}" id="75w140">
+                                    <div class="content-container">
+                                        <div class="cta col-md-6">
+                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <section ng-bind-html="product.gra75w140_specification"></section>
+                                        </div>
+                                        <div class="cta col-md-6">
+                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <section>
+                                                <section ng-bind-html="product.gra75w140_technical"></section>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--80w90-->
+                                <div role="tabpanel" class="tab-pane" ng-class="{'active': !product.gra0w20_technical && 
+                                                                                            !product.gra0w30_technical && 
+                                                                                            !product.gra0w40_technical && 
+                                                                                            !product.gra0w50_technical && 
+                                                                                            !product.gra5w20_technical && 
+                                                                                            !product.gra5w30_technical && 
+                                                                                            !product.gra5w40_technical &&
+                                                                                            !product.gra5w50_technical && 
+                                                                                            !product.gra10w30_technical &&
+                                                                                            !product.gra10w40_technical &&
+                                                                                            !product.gra15w40_technical &&
+                                                                                            !product.gra15w50_technical &&
+                                                                                            !product.gra20w50_technical &&
+                                                                                            !product.gra75w90_technical &&
+                                                                                            !product.gra75w140_technical &&
+                                                                                            product.gra80w90_technical}" id="80w90">
+                                    <div class="content-container">
+                                        <div class="cta col-md-6">
+                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <section ng-bind-html="product.gra80w90_specification"></section>
+                                        </div>
+                                        <div class="cta col-md-6">
+                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <section>
+                                                <section ng-bind-html="product.gra80w90_technical"></section>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--85w140-->
+                                <div role="tabpanel" class="tab-pane" ng-class="{'active': !product.gra0w20_technical && 
+                                                                                            !product.gra0w30_technical && 
+                                                                                            !product.gra0w40_technical && 
+                                                                                            !product.gra0w50_technical && 
+                                                                                            !product.gra5w20_technical && 
+                                                                                            !product.gra5w30_technical && 
+                                                                                            !product.gra5w40_technical &&
+                                                                                            !product.gra5w50_technical && 
+                                                                                            !product.gra10w30_technical &&
+                                                                                            !product.gra10w40_technical &&
+                                                                                            !product.gra15w40_technical &&
+                                                                                            !product.gra15w50_technical &&
+                                                                                            !product.gra20w50_technical &&
+                                                                                            !product.gra75w90_technical &&
+                                                                                            !product.gra75w140_technical &&
+                                                                                            !product.gra80w90_technical &&
+                                                                                            product.gra85w140_technical}" id="85w140">
+                                    <div class="content-container">
+                                        <div class="cta col-md-6">
+                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <section ng-bind-html="product.gra85w140_specification"></section>
+                                        </div>
+                                        <div class="cta col-md-6">
+                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <section>
+                                                <section ng-bind-html="product.gra85w140_technical"></section>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="container-fluid">
+                    <div class="relate-prod">
+                        <p class="title-relate-prod">Sản phẩm liên quan</p>
+                        <div class="col-md-12" ng-repeat="(index, value) in products">
+                            <div class="catalog-child">
+                                <a href="/san-pham/{{value.alias}}-{{value.idProduct}}"><img src="{{value.image}}" class="img-responsive" /></a>
+                                <div class="text">
+                                    <div class="title"><a href="/san-pham/{{value.alias}}-{{value.idProduct}}">{{value.title}}</a></div>
+                                    <div class="description">{{value.note}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
