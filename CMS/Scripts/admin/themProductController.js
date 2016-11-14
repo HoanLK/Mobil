@@ -39,7 +39,7 @@
     //Lấy idProduct từ Url
     $scope.currentIdProduct = Url.getParameterByName('idProduct');
 
-    //Nếu sửa thì trả về giá trị của Post
+    //Nếu sửa thì trả về giá trị của Product
     if ($scope.currentIdProduct) {
         $http.get('/API/ProductsAPI/' + $scope.currentIdProduct)
             .success(function (data) {
@@ -58,7 +58,7 @@
                     published: data.published,
                     image: data.image,
                     tags: data.tags,
-                    version: data.version,
+                    stt: data.stt,
                     deleted: data.deleted,
                     feature: data.feature,
                     metadescription: data.metadescription,
@@ -78,8 +78,8 @@
                     gra5w20_technical: data.gra5w20_technical,
                     gra5w30_specification: data.gra5w30_specification,
                     gra5w30_technical: data.gra5w30_technical,
-                    gra5w30_specification: data.gra5w40_specification,
-                    gra5w30_technical: data.gra5w40_specification,
+                    gra5w40_specification: data.gra5w40_specification,
+                    gra5w40_technical: data.gra5w40_specification,
                     gra5w50_specification: data.gra5w50_specification,
                     gra5w50_technical: data.gra5w50_technical,
 
@@ -110,11 +110,12 @@
                 $scope.category = { id: data.idCategoryProduct };
             });
     }
-        //Không thì thiết lập giá trị mặc định
+    //Không thì thiết lập giá trị mặc định
     else {
         $scope.product = {
             published: 1,
             feature: '0',
+            stt: 0,
             robots: 'Index, Follow',
             idUserCreated: angular.element('#user').val(),
             timeCreated: new Date(),

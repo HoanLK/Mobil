@@ -28,37 +28,37 @@ namespace CMS.Models
         public Nullable<int> published { get; set; }
         public string image { get; set; }
         public string tags { get; set; }
-        public string version { get; set; }
+        public Nullable<int> stt { get; set; }
         public Nullable<int> deleted { get; set; }
         public string feature { get; set; }
         public string metadescription { get; set; }
         public string metakewords { get; set; }
         public string author { get; set; }
         public string robots { get; set; }
-        public string gra0w40_specification { get; set; }
-        public string gra0w40_technical { get; set; }
-        public string gra5w20_specification { get; set; }
-        public string gra5w20_technical { get; set; }
-        public string gra5w30_specification { get; set; }
-        public string gra5w30_technical { get; set; }
-        public string gra5w50_specification { get; set; }
-        public string gra5w50_technical { get; set; }
-        public string gra10w30_specification { get; set; }
-        public string gra10w30_technical { get; set; }
-        public string gra15w50_specification { get; set; }
-        public string gra15w50_technical { get; set; }
         public string gra0w20_specification { get; set; }
         public string gra0w20_technical { get; set; }
         public string gra0w30_specification { get; set; }
         public string gra0w30_technical { get; set; }
+        public string gra0w40_specification { get; set; }
+        public string gra0w40_technical { get; set; }
         public string gra0w50_specification { get; set; }
         public string gra0w50_technical { get; set; }
+        public string gra5w20_specification { get; set; }
+        public string gra5w20_technical { get; set; }
+        public string gra5w30_technical { get; set; }
+        public string gra5w30_specification { get; set; }
         public string gra5w40_specification { get; set; }
         public string gra5w40_technical { get; set; }
+        public string gra5w50_specification { get; set; }
+        public string gra5w50_technical { get; set; }
+        public string gra10w30_specification { get; set; }
+        public string gra10w30_technical { get; set; }
         public string gra10w40_specification { get; set; }
         public string gra10w40_technical { get; set; }
         public string gra15w40_specification { get; set; }
         public string gra15w40_technical { get; set; }
+        public string gra15w50_specification { get; set; }
+        public string gra15w50_technical { get; set; }
         public string gra20w50_specification { get; set; }
         public string gra20w50_technical { get; set; }
         public string gra75w140_specification { get; set; }

@@ -21,8 +21,5 @@ namespace CMS.Models
         public string text_link { get; set; }
         public string image { get; set; }
         public string ghichu { get; set; }
-        public string color_background_banner { get; set; }
-        public string color_title_banner { get; set; }
-        public string color_text_banner { get; set; }
     }
 }

@@ -25,9 +25,7 @@ namespace CMS.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Banner> Banner { get; set; }
         public virtual DbSet<Post> Post { get; set; }
-        public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<Video> Video { get; set; }
@@ -37,5 +35,7 @@ namespace CMS.Models
         public virtual DbSet<Category> Category { get; set; }
         public virtual DbSet<CategoryProduct> CategoryProduct { get; set; }
         public virtual DbSet<CustomerRegister> CustomerRegister { get; set; }
+        public virtual DbSet<Product> Product { get; set; }
+        public virtual DbSet<Banner> Banner { get; set; }
     }
 }

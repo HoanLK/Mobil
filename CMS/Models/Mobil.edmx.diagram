@@ -5,9 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="99555ed3edfd453bb330745a466fe5b4" Name="Diagram1" ZoomLevel="93">
-        <EntityTypeShape EntityType="MobilModel.Banner" Width="1.5" PointX="4.75" PointY="3.75" />
         <EntityTypeShape EntityType="MobilModel.Post" Width="1.5" PointX="0.75" PointY="6.75" />
-        <EntityTypeShape EntityType="MobilModel.Product" Width="1.5" PointX="6.75" PointY="3.75" />
         <EntityTypeShape EntityType="MobilModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="7.75" />
         <EntityTypeShape EntityType="MobilModel.User" Width="1.5" PointX="7" PointY="0.875" />
         <EntityTypeShape EntityType="MobilModel.Video" Width="1.5" PointX="8.75" PointY="3.75" />
@@ -20,6 +18,8 @@
         <EntityTypeShape EntityType="MobilModel.CategoryProduct" Width="1.5" PointX="9.375" PointY="10.75" />
         <AssociationConnector Association="MobilModel.FK_CategoryProduct_CategoryProduct1" />
         <EntityTypeShape EntityType="MobilModel.CustomerRegister" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MobilModel.Product" Width="1.5" PointX="5.375" PointY="7.75" />
+        <EntityTypeShape EntityType="MobilModel.Banner" Width="1.5" PointX="3.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

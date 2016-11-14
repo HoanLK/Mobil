@@ -2912,6 +2912,7 @@
     <Content Include="Views\Shared\_MenuMain.cshtml" />
     <Content Include="Views\TimKiem\Index.cshtml" />
     <Content Include="Scripts\front\pagination\README.md" />
+    <Content Include="Views\Shared\_FootCTA.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

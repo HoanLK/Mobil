@@ -10,9 +10,9 @@
             <div class="carousel-inner" role="listbox">
                 <div class="item banner-child active" style="background-image: url(@Model.image_banner); background-color: @Model.color_background_banner; ">
                     <div class="banner-child-content">
-                        <div class="banner-child-title" style="color: @Model.color_text_banner">
+                        <h1 class="banner-child-title" style="color: @Model.color_text_banner">
                             @Model.title
-                        </div>
+                        </h1>
                         <div class="banner-child-des" style="color: @Model.color_title_banner">
                             @Model.description
                         </div>
@@ -57,3 +57,4 @@
         </div>
     </div>
 </div>
+@Html.Partial("_FootCTA")

@@ -31,7 +31,7 @@
                         <h3 class="title-grade">Thông số phẩm cấp</h3>
                         <div class="tabs-news row content-grade">
                             <!-- Nav tabs -->
-                            <ul class="nav nav-tabs responsive" role="tablist">
+                            <ul class="nav nav-tabs" role="tablist">
                                 @if (!(Model.gra0w20_specification == null))
                                 {
                                     <li role="presentation" ng-show="product.gra0w20_specification || product.gra0w20_technical" ng-class="{'active': product.gra0w20_technical}" class="active"><a href="#0w20" aria-controls="home" role="tab" data-toggle="tab">0W-20</a></li>}
@@ -219,11 +219,11 @@
                                 <div role="tabpanel" class="tab-pane" ng-class="{'active': product.gra0w20_technical}" id="0w20">
                                     <div class="content-container">
                                         <div class="cta col-md-6">
-                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <div>Thông số kỹ thuật và kiểm duyệt</div>
                                             <section><section ng-bind-html="product.gra0w20_specification"></section></section>
                                         </div>
                                         <div class="cta col-md-6">
-                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <div>Chi tiết kỹ thuật </div>
                                             <section style="margin-top: 10px;">
                                                 <section ng-bind-html="product.gra0w20_technical"></section>
                                             </section>
@@ -234,11 +234,11 @@
                                 <div role="tabpanel" class="tab-pane" ng-class="{'active': !product.gra0w20_technical && product.gra0w30_technical}" id="0w30">
                                     <div class="content-container">
                                         <div class="cta col-md-6">
-                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <div>Thông số kỹ thuật và kiểm duyệt</div>
                                             <section><section ng-bind-html="product.gra0w30_specification"></section></section>
                                         </div>
                                         <div class="cta col-md-6">
-                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <div>Chi tiết kỹ thuật </div>
                                             <section style="margin-top: 10px;">
                                                 <section ng-bind-html="product.gra0w30_technical"></section>
                                             </section>
@@ -249,11 +249,11 @@
                                 <div role="tabpanel" class="tab-pane" ng-class="{'active': !product.gra0w20_technical && !product.gra0w30_technical && product.gra0w40_technical}" id="0w40">
                                     <div class="content-container">
                                         <div class="cta col-md-6">
-                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <div>Thông số kỹ thuật và kiểm duyệt</div>
                                             <section><section ng-bind-html="product.gra0w40_specification"></section></section>
                                         </div>
                                         <div class="cta col-md-6">
-                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <div>Chi tiết kỹ thuật </div>
                                             <section style="margin-top: 10px;">
                                                 <section ng-bind-html="product.gra0w40_technical"></section>
                                             </section>
@@ -264,11 +264,11 @@
                                 <div role="tabpanel" class="tab-pane" ng-class="{'active': !product.gra0w20_technical && !product.gra0w30_technical && !product.gra0w40_technical && product.gra0w50_technical}" id="0w50">
                                     <div class="content-container">
                                         <div class="cta col-md-6">
-                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <div>Thông số kỹ thuật và kiểm duyệt</div>
                                             <section><section ng-bind-html="product.gra0w50_specification"></section></section>
                                         </div>
                                         <div class="cta col-md-6">
-                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <div>Chi tiết kỹ thuật </div>
                                             <section style="margin-top: 10px;">
                                                 <section ng-bind-html="product.gra0w50_technical"></section>
                                             </section>
@@ -279,11 +279,11 @@
                                 <div role="tabpanel" class="tab-pane" ng-class="{'active': !product.gra0w20_technical && !product.gra0w30_technical && !product.gra0w40_technical && !product.gra0w50_technical && product.gra5w20_technical}" id="5w20">
                                     <div class="content-container">
                                         <div class="cta col-md-6">
-                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <div>Thông số kỹ thuật và kiểm duyệt</div>
                                             <section ng-bind-html="product.gra5w20_specification"></section>
                                         </div>
                                         <div class="cta col-md-6">
-                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <div>Chi tiết kỹ thuật </div>
                                             <section>
                                                 <section ng-bind-html="product.gra5w20_technical"></section>
                                             </section>
@@ -294,11 +294,11 @@
                                 <div role="tabpanel" class="tab-pane" ng-class="{'active': !product.gra0w20_technical && !product.gra0w30_technical && !product.gra0w40_technical && !product.gra0w50_technical && !product.gra5w20_technical && product.gra5w30_technical}" id="5w30">
                                     <div class="content-container">
                                         <div class="cta col-md-6">
-                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <div>Thông số kỹ thuật và kiểm duyệt</div>
                                             <section ng-bind-html="product.gra5w30_specification"></section>
                                         </div>
                                         <div class="cta col-md-6">
-                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <div>Chi tiết kỹ thuật </div>
                                             <section>
                                                 <section ng-bind-html="product.gra5w30_technical"></section>
                                             </section>
@@ -315,11 +315,11 @@
                                                                                             product.gra5w40_technical}" id="5w40">
                                     <div class="content-container">
                                         <div class="cta col-md-6">
-                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <div>Thông số kỹ thuật và kiểm duyệt</div>
                                             <section ng-bind-html="product.gra5w40_specification"></section>
                                         </div>
                                         <div class="cta col-md-6">
-                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <div>Chi tiết kỹ thuật </div>
                                             <section>
                                                 <section ng-bind-html="product.gra5w40_technical"></section>
                                             </section>
@@ -337,11 +337,11 @@
                                                                                             product.gra5w50_technical}" id="5w50">
                                     <div class="content-container">
                                         <div class="cta col-md-6">
-                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <div>Thông số kỹ thuật và kiểm duyệt</div>
                                             <section ng-bind-html="product.gra5w50_specification"></section>
                                         </div>
                                         <div class="cta col-md-6">
-                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <div>Chi tiết kỹ thuật </div>
                                             <section>
                                                 <section ng-bind-html="product.gra5w50_technical"></section>
                                             </section>
@@ -360,11 +360,11 @@
                                                                                             product.gra10w30_technical}" id="10w30">
                                     <div class="content-container">
                                         <div class="cta col-md-6">
-                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <div>Thông số kỹ thuật và kiểm duyệt</div>
                                             <section ng-bind-html="product.gra10w30_specification"></section>
                                         </div>
                                         <div class="cta col-md-6">
-                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <div>Chi tiết kỹ thuật </div>
                                             <section>
                                                 <section ng-bind-html="product.gra10w30_technical"></section>
                                             </section>
@@ -384,11 +384,11 @@
                                                                                             product.gra10w40_technical}" id="10w40">
                                     <div class="content-container">
                                         <div class="cta col-md-6">
-                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <div>Thông số kỹ thuật và kiểm duyệt</div>
                                             <section ng-bind-html="product.gra10w40_specification"></section>
                                         </div>
                                         <div class="cta col-md-6">
-                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <div>Chi tiết kỹ thuật </div>
                                             <section>
                                                 <section ng-bind-html="product.gra10w40_technical"></section>
                                             </section>
@@ -409,11 +409,11 @@
                                                                                             product.gra15w40_technical}" id="15w40">
                                     <div class="content-container">
                                         <div class="cta col-md-6">
-                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <div>Thông số kỹ thuật và kiểm duyệt</div>
                                             <section ng-bind-html="product.gra15w40_specification"></section>
                                         </div>
                                         <div class="cta col-md-6">
-                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <div>Chi tiết kỹ thuật </div>
                                             <section>
                                                 <section ng-bind-html="product.gra15w40_technical"></section>
                                             </section>
@@ -435,11 +435,11 @@
                                                                                             product.gra15w50_technical}" id="15w50">
                                     <div class="content-container">
                                         <div class="cta col-md-6">
-                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <div>Thông số kỹ thuật và kiểm duyệt</div>
                                             <section ng-bind-html="product.gra15w50_specification"></section>
                                         </div>
                                         <div class="cta col-md-6">
-                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <div>Chi tiết kỹ thuật </div>
                                             <section>
                                                 <section ng-bind-html="product.gra15w50_technical"></section>
                                             </section>
@@ -462,11 +462,11 @@
                                                                                             product.gra20w50_technical}" id="20w50">
                                     <div class="content-container">
                                         <div class="cta col-md-6">
-                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <div>Thông số kỹ thuật và kiểm duyệt</div>
                                             <section ng-bind-html="product.gra20w50_specification"></section>
                                         </div>
                                         <div class="cta col-md-6">
-                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <div>Chi tiết kỹ thuật </div>
                                             <section>
                                                 <section ng-bind-html="product.gra20w50_technical"></section>
                                             </section>
@@ -490,11 +490,11 @@
                                                                                             product.gra75w90_technical}" id="75w90">
                                     <div class="content-container">
                                         <div class="cta col-md-6">
-                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <div>Thông số kỹ thuật và kiểm duyệt</div>
                                             <section ng-bind-html="product.gra75w90_specification"></section>
                                         </div>
                                         <div class="cta col-md-6">
-                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <div>Chi tiết kỹ thuật </div>
                                             <section>
                                                 <section ng-bind-html="product.gra75w90_technical"></section>
                                             </section>
@@ -519,11 +519,11 @@
                                                                                             product.gra75w140_technical}" id="75w140">
                                     <div class="content-container">
                                         <div class="cta col-md-6">
-                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <div>Thông số kỹ thuật và kiểm duyệt</div>
                                             <section ng-bind-html="product.gra75w140_specification"></section>
                                         </div>
                                         <div class="cta col-md-6">
-                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <div>Chi tiết kỹ thuật </div>
                                             <section>
                                                 <section ng-bind-html="product.gra75w140_technical"></section>
                                             </section>
@@ -549,11 +549,11 @@
                                                                                             product.gra80w90_technical}" id="80w90">
                                     <div class="content-container">
                                         <div class="cta col-md-6">
-                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <div>Thông số kỹ thuật và kiểm duyệt</div>
                                             <section ng-bind-html="product.gra80w90_specification"></section>
                                         </div>
                                         <div class="cta col-md-6">
-                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <div>Chi tiết kỹ thuật </div>
                                             <section>
                                                 <section ng-bind-html="product.gra80w90_technical"></section>
                                             </section>
@@ -580,11 +580,11 @@
                                                                                             product.gra85w140_technical}" id="85w140">
                                     <div class="content-container">
                                         <div class="cta col-md-6">
-                                            <h4>Thông số kỹ thuật và kiểm duyệt</h4>
+                                            <div>Thông số kỹ thuật và kiểm duyệt</div>
                                             <section ng-bind-html="product.gra85w140_specification"></section>
                                         </div>
                                         <div class="cta col-md-6">
-                                            <h4>Chi tiết kỹ thuật </h4>
+                                            <div>Chi tiết kỹ thuật </div>
                                             <section>
                                                 <section ng-bind-html="product.gra85w140_technical"></section>
                                             </section>
@@ -615,3 +615,4 @@
         </div>
     </div>
 </div>
+@Html.Partial("_FootCTA")

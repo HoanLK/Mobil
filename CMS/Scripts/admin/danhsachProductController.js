@@ -19,7 +19,7 @@
     [
         {
             displayName: "STT",
-            name: 'stt',
+            name: 'sott',
             enableCellEdit: false,
             enableSorting: false,
             enableFiltering: false,
@@ -27,9 +27,9 @@
             cellTemplate: '<div class="ui-grid-cell-contents text-center">{{grid.renderContainers.body.visibleRowCache.indexOf(row)+1}}</div>'
         },
         {
-            displayName: "ID",
-            name: 'idProduct',
-            enableSorting: false,
+            displayName: "Thứ tự",
+            name: 'stt',
+            enableSorting: true,
             width: 60,
         },
         {

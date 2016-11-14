@@ -8,9 +8,9 @@
             <div class="carousel-inner" role="listbox">
                 <div class="item banner-child" ng-class="{'active':index==0}" style="background-image: url({{value.image}})" ng-repeat="(index, value) in banners">
                     <div class="banner-child-content">
-                        <h1 class="banner-child-title">
+                        <div class="banner-child-title">
                             {{value.title}}
-                        </h1>
+                        </div>
                         <div class="banner-child-des">
                             {{value.description}}
                         </div>

@@ -4,9 +4,9 @@
             <div class="carousel-inner" role="listbox">
                 <div class="item banner-child active" style="background-image: url('/Content/Images/images/Banner/BannerProduct/BannerProduct.jpg'); background-color: #fff; ">
                     <div class="banner-child-content">
-                        <div class="banner-child-title" style="color: #3a3a3a">
+                        <h1 class="banner-child-title" style="color: #3a3a3a">
                             Những sản phẩm của chúng tôi
-                        </div>
+                        </h1>
                         <div class="banner-child-des" style="color: #3a3a3a">
                             Bất cứ khi nào bạn đang ở trên đường, bạn phụ thuộc vào động cơ của bạn - và tất cả các bộ phận của nó - để chạy trơn tru. Đó là lý do tại sao chúng tôi cung cấp một loạt các sản phẩm chất lượng cao, bạn có thể tin tưởng.
                         </div>
@@ -18,7 +18,7 @@
     <div ng-controller="allCategoryProductController">
         <div class="container-fluid">
             <div class="catalog-product">
-                <h1 class="title-catalog">Danh mục sản phẩm</h1>
+                <p class="title-catalog text-uppercase">Danh mục sản phẩm</p>
                 @*<div class="col-md-4" ng-repeat="(index, value) in categories">*@
                 <div class="col-md-3" dir-paginate="(index, value) in categories | itemsPerPage: 12">
                     <div class="catalog-child">
@@ -34,3 +34,4 @@
         </div>
     </div>
 </div>
+@Html.Partial("_FootCTA")

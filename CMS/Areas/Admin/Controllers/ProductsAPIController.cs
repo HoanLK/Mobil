@@ -20,7 +20,7 @@ namespace CMS.Areas.Admin.Controllers
         // GET: api/ProductsAPI
         public IQueryable<Product> GetProduct()
         {
-            return db.Product;
+            return db.Product.OrderBy(p => p.stt);
         }
 
         // GET: api/ProductsAPI/5
